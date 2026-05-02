@@ -73,7 +73,7 @@ const TodoScreen = ({ userId }: {userId: Id<"users">}) => {
 
             {/* 2. Body Section (White with Rounded Top) */}
             <View style={styles.bodyContainer}>
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <ScrollView>
                     {filterTodos.map(item => (
                         <View style={styles.todoItem} key={item._id}>
                             <TouchableOpacity style={styles.textWrapper} onPress={() => toggleTodo(item._id, item.isCompleted)}>
@@ -82,7 +82,10 @@ const TodoScreen = ({ userId }: {userId: Id<"users">}) => {
                                     size={28}
                                     color={item.isCompleted ? "#7D7AFF" : "#CCC"}
                                 />
-                                <Text style={[styles.todoText, item.isCompleted && styles.todoCompleted]}>
+                                <Text style={[
+                                    styles.todoText,
+                                    item.isCompleted ? styles.todoCompleted : null
+                                ]}>
                                     {item.text}
                                 </Text>
                             </TouchableOpacity>

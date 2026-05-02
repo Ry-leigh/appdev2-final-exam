@@ -7,14 +7,16 @@ import {
   TextInput,
 } from "react-native";
 import Ionicons from "@react-native-vector-icons/ionicons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SignupScreen() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       {/* 1. Header Section */}
       <View style={styles.header}>
         <Image
-          source={require("../../assets/signup.webp")}
+          source={require("./../assets/signup.webp")}
           style={styles.image}
         />
       </View>
@@ -28,7 +30,7 @@ export default function SignupScreen() {
         <TextInput style={styles.input} placeholder="john@gmail.com" />
 
         <Text style={styles.label}>Password</Text>
-        <TextInput style={styles.input} secureTextEntry placeholder="********" />
+        <TextInput style={styles.input} secureTextEntry={true} placeholder="********" />
 
         <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.loginButtonText}>Sign Up</Text>
@@ -52,8 +54,8 @@ export default function SignupScreen() {
 
         <View style={styles.footer}>
           <Text>Already have an account? </Text>
-          <TouchableOpacity>
-            <Text style={styles.linkText}>Log In</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Text style={styles.linkText}>Log In</Text>
           </TouchableOpacity>
         </View>
       </View>
