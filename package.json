@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "convex": "^1.37.0",
     "expo": "~54.0.33",
     "expo-status-bar": "~3.0.9",
@@ -16,6 +17,7 @@
     "react-native": "0.81.5"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/react": "~19.1.0",
     "typescript": "~5.9.2"
   },
